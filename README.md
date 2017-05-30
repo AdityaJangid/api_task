@@ -47,9 +47,9 @@ Use any language you are comfortable with (python or nodejs preferably)
  
 ### Example
 
-1. [http://localhost:5000/api/request?connid=19&tiomeout=60][localhost1] to create a new request.
+1. http://localhost:5000/api/request?connid=19&tiomeout=60 to create a new request.
 
-2. [http://localhost:5000/api/serverStatus][localhost2] to show the server status
+2. http://localhost:5000/api/serverStatus to show the server status
 
 3. **http://localhost:5000/api/kil?connid=19** with payload as {"connid":"19"} to kill the ongoing request with id 19.
 
