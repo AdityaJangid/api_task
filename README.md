@@ -4,14 +4,14 @@
 
 Implement a server which should be capable of doing the following:
 
-   - Exposes a GET API as "api/request?connId=19&timeout=80" 
+   - Exposes a GET API as "api/request?connid=19&timeout=80" 
  This API will keep the request running for provided time on the server side. After the successful completion of the provided time it should return {"status":"ok"}
 
    - Exposes a GET API as "api/serverStatus" 
  This API returns all the running requests on the server with their time left for completion. E.g {"2":"15","8":"10"} where 2 and 8 are the connIds and 15 and 10 is the time remaining for the requests to complete (in seconds).
 
-   - Exposes a PUT API as "api/kill" with payload as {"connId":12} 
-This API will finish the running request with provided connId, so that the finished request returns {"status":"killed"} and the current request will return {"status":"ok"}. If no running request found with the provided connId on the server then the current request should return "status":"invalid connection Id : <connId>"}
+   - Exposes a PUT API as "api/kill" with payload as {"connid":12} 
+This API will finish the running request with provided connid, so that the finished request returns {"status":"killed"} and the current request will return {"status":"ok"}. If no running request found with the provided connid on the server then the current request should return "status":"invalid connection Id : <connid>"}
 
 You can try running your application with curl for testing. Try to implement the solution which would be efficient and scalable.
 Bonus Points
@@ -43,11 +43,13 @@ Use any language you are comfortable with (python or nodejs preferably)
 ### Every thing is set now
 
 
-### Example
-
-`-. http://localhost:5000/api/request?connid=19&tiomeout=60` to create a new request.
-`-. http://localhost:5000/api/serverStatus` to show the server status
-`- http://localhost:5000/api/kil?connId=19 with payload as {"connId":"19"}` to kill the ongoing request with id 19.
-
 
  
+### Example
+
+1. [http://localhost:5000/api/request?connid=19&tiomeout=60][localhost1] to create a new request.
+
+2. [http://localhost:5000/api/serverStatus][localhost2] to show the server status
+
+3. **http://localhost:5000/api/kil?connid=19** with payload as {"connid":"19"} to kill the ongoing request with id 19.
+
