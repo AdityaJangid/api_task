@@ -45,6 +45,7 @@ def not_found(error):
 def get_data():
     con_id = request.args.get('connid')
     tim_out = request.args.get('timeout')
+    tim = int(tim_out)
     print(con_id)
     print(tim_out)
     #  float_time = float(tim_out)
@@ -61,7 +62,7 @@ def get_data():
         f.close()
         #  f.write(os.linesep)
     #  time.sleep(float_time)
-    #  time.sleep(40)
+    time.sleep(tim)
 
     return "{status:ok}"
     #  print(type(con_id))
